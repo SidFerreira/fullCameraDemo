@@ -1,23 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $fullCamera) {//fullCamera
-      $scope.items = [];
-      $scope.openCamera = function() {
-        $fullCamera.get().then(function(resultData) {
-          console.log('YES');
-          if(resultData.items) {
-            for (var i = 0; i < resultData.items.length; i++) {
-              var item = resultData.items[i];
-              if(resultData.source_id == "photo")
-                item.img = "data:image/jpeg;base64," + item.data
-              $scope.items[$scope.items.length] = item;
-            };
-          }
-        }, function(err) {
-          console.log('NO');
-        });
-      };
-    })
+.controller('DashCtrl', function($scope, $fullCamera) {
+  $scope.items = [];
+  $scope.get = function() {
+    $fullCamera.get().then(function(resultData) {
+      console.log(resultData);
+      if(resultData.items) {
+        for (var i = 0; i < resultData.items.length; i++) {
+          var item = resultData.items[i];
+          if(resultData.source == "photo")
+            item.img = "data:image/jpeg;base64," + item.data;
+          console.log(item);
+          $scope.items[$scope.items.length] = item;
+        };
+      }
+    }, function(err) {
+      console.log('NO');
+    });
+  };
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();

@@ -5,8 +5,8 @@
     </div>
     <ion-list>
       <ion-item ng-repeat="item in items" class="item-thumbnail-left">
-        <img ng-src="item.img" />
-        <p>{{item.path}}</p>
+        <img ng-src="{{item.img}}" />
+        {{item.path}}
       </ion-item>
     </ion-list>
   </ion-content>

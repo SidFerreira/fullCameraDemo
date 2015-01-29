@@ -1,0 +1,3 @@
+[submodule "plugins/br.com.ferreiraz.fullcamera"]
+	path = plugins/br.com.ferreiraz.fullcamera
+	url = git@github.com:SidFerreira/fullCamera.git
