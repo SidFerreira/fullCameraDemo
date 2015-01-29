@@ -1,0 +1,13 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="text-center padding">
+      <button class="button button-positive" ng-click="get()">Get Pictures</button>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="item in items" class="item-thumbnail-left">
+        <img ng-src="item.img" />
+        <p>{{item.path}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
