@@ -13,6 +13,7 @@ androidPathResources="${pluginPath}src/android/resources"
 
 androidPathFullcamera="${pluginPath}src/android/fullcamera"
 androidPathEcogallery="${androidPathFullcamera}/ecogallery"
+androidPathMediaChooserlib="${androidPathFullcamera}/mediaChooserlib"
 androidPathLibs="${androidPathFullcamera}/libs"
 
 rm -rf ${androidPathFullcamera}
@@ -20,12 +21,14 @@ rm -rf ${androidPathFullcamera}
 mkdir -p ${androidPathLibs}
 mkdir -p ${androidPathEcogallery}
 
-cp -a ./../FullCamAndroid/app/src/main/   ${androidPathFullcamera}
+cp -a ./../FullCamAndroid/fullcamera/src/main/   ${androidPathFullcamera}
 cp -a ./../FullCamAndroid/ecogallery/src/main/   ${androidPathEcogallery}
-cp -a ./../FullCamAndroid/app/libs/*   ${androidPathLibs}
+cp -a ./../FullCamAndroid/mediaChooserlib/src/main/   ${androidPathMediaChooserlib}
+cp -a ./../FullCamAndroid/fullcamera/libs/*   ${androidPathLibs}
 
 mv ${androidPathFullcamera}/java ${androidPathFullcamera}/src
 mv ${androidPathEcogallery}/java ${androidPathEcogallery}/src
+mv ${androidPathMediaChooserlib}/java ${androidPathMediaChooserlib}/src
 
 
 echo "    <platform name=\"android\">" > ${androidPathConfig}
