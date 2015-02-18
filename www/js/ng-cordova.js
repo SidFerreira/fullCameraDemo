@@ -53,11 +53,8 @@
       return {
           get: function(options) {
             options = options || {};
-/*            success = success || function() { console.log('Success'); };
-            fail    = fail    || function() { console.log('Fail'); };
 
-            navigator.fullCamera.get(success, fail, options);*/
-                        var q = $q.defer();
+            var q = $q.defer();
 
             if (!navigator.fullCamera) {
               q.resolve(null);

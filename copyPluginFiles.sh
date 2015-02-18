@@ -12,22 +12,29 @@ androidPathSources="${pluginPath}src/android/sources"
 androidPathResources="${pluginPath}src/android/resources"
 
 androidPathFullcamera="${pluginPath}src/android/fullcamera"
-androidPathEcogallery="${androidPathFullcamera}/ecogallery"
-androidPathMediaChooserlib="${androidPathFullcamera}/mediaChooserlib"
 androidPathLibs="${androidPathFullcamera}/libs"
+
+androidPathEcogallery="${androidPathFullcamera}/ecogallery"
+
+androidPathMediaChooserlib="${androidPathFullcamera}/mediaChooserlib"
+androidPathMediaChooserlibLibs="${androidPathMediaChooserlib}/libs"
 
 rm -rf ${androidPathFullcamera}
 
 mkdir -p ${androidPathLibs}
+mkdir -p ${androidPathMediaChooserlibLibs}
 mkdir -p ${androidPathEcogallery}
 
-cp -a ./../FullCamAndroid/fullcamera/src/main/   ${androidPathFullcamera}
-cp -a ./../FullCamAndroid/ecogallery/src/main/   ${androidPathEcogallery}
-cp -a ./../FullCamAndroid/mediaChooserlib/src/main/   ${androidPathMediaChooserlib}
-cp -a ./../FullCamAndroid/fullcamera/libs/*   ${androidPathLibs}
-
+cp -a ./../FullCamAndroid/fullCamera/src/main/   ${androidPathFullcamera}
+cp -a ./../FullCamAndroid/fullCamera/libs/*   ${androidPathLibs}
 mv ${androidPathFullcamera}/java ${androidPathFullcamera}/src
+
+cp -a ./../FullCamAndroid/ecogallery/src/main/   ${androidPathEcogallery}
 mv ${androidPathEcogallery}/java ${androidPathEcogallery}/src
+
+cp -a ./../FullCamAndroid/mediaChooserlib/src/main/   ${androidPathMediaChooserlib}
+cp -a ./../FullCamAndroid/mediaChooserlib/libs/*   ${androidPathMediaChooserlibLibs}
+
 mv ${androidPathMediaChooserlib}/java ${androidPathMediaChooserlib}/src
 
 

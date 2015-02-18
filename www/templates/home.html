@@ -1,0 +1,51 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="row padding">
+      <div class="col text-center">
+        <label class="toggle">
+          <input type="checkbox" ng-model="options.galleryPhoto">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+        <p>Gallery - Photos</p>
+      </div>
+      <div class="col text-center">
+        <label class="toggle">
+          <input type="checkbox" ng-model="options.galleryVideo">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+        <p>Gallery - Videos</p>
+      </div>
+      <div class="col text-center">
+        <label class="toggle">
+          <input type="checkbox" ng-model="options.cameraPhoto">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+        <p>Camera - Photos</p>
+      </div>
+      <div class="col text-center">
+        <label class="toggle">
+          <input type="checkbox" ng-model="options.cameraVideo">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+        <p>Camera - Videos</p>
+      </div>
+    </div>
+    <div class="text-center padding">
+      <button class="button button-positive" ng-click="get()">Get Pictures</button>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="item in items" class="item-thumbnail-left">
+        <img ng-src="{{item.img}}" />
+        {{item.path}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
