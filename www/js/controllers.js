@@ -29,9 +29,9 @@ angular.module('starter.controllers', [])
       if(resultData && resultData.items) {
         for (var i = 0; i < resultData.items.length; i++) {
           var item = resultData.items[i];
-          if(resultData.source == "photo")
+          if(item.source.substr(-5) == "photo")
             item.img = "data:image/jpeg;base64," + item.data;
-          console.log(item);
+          item.name = item.path.split('/').pop();
           $scope.items[$scope.items.length] = item;
         };
       } else {
