@@ -1,25 +1,27 @@
 #!/bin/sh
 
-
-pluginPath="./plugins/br.com.ferreiraz.fullcamera/"
+reverseDomain="br.com.ferreiraz.fullcamera"
+pluginPath="./plugins/${reverseDomain}/"
 pathConfig="${pluginPath}plugin.xml"
 pathConfigHeader="${pluginPath}plugin-header.xml"
 
 iosPathConfig="${pluginPath}plugin-ios.xml"
 
+androidPath="${pluginPath}src/android"
+
 androidPathConfig="${pluginPath}plugin-android.xml"
 androidPathSources="${pluginPath}src/android/sources"
 androidPathResources="${pluginPath}src/android/resources"
 
-androidPathFullcamera="${pluginPath}src/android/fullcamera"
+androidPathFullcamera="${androidPath}/fullcamera"
 androidPathLibs="${androidPathFullcamera}/libs"
 
-androidPathEcogallery="${androidPathFullcamera}/ecogallery"
+androidPathEcogallery="${androidPath}/ecogallery"
 
-androidPathMediaChooserlib="${androidPathFullcamera}/mediaChooserlib"
+androidPathMediaChooserlib="${androidPath}/mediaChooserlib"
 androidPathMediaChooserlibLibs="${androidPathMediaChooserlib}/libs"
 
-rm -rf ${androidPathFullcamera}
+rm -rf ${androidPath}
 
 mkdir -p ${androidPathLibs}
 mkdir -p ${androidPathMediaChooserlibLibs}
@@ -64,6 +66,8 @@ echo "        </activity>" >> ${androidPathConfig}
 echo "        </config-file>" >> ${androidPathConfig}
 echo "" >> ${androidPathConfig}
 echo "        <framework src=\"src/android/fullcamera\" custom=\"true\" />" >> ${androidPathConfig}
+echo "        <framework src=\"src/android/ecogallery\" custom=\"true\" />" >> ${androidPathConfig}
+echo "        <framework src=\"src/android/mediaChooserlib\" custom=\"true\" />" >> ${androidPathConfig}
 echo "" >> ${androidPathConfig}
 echo "    </platform>" >> ${androidPathConfig}
 
