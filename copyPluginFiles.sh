@@ -72,7 +72,7 @@ echo "        You need to install __Google Play Services__ from the \`Android Ex
 echo "        You need to add the following line to the \`local.properties\`:" >> ${androidPathConfig}
 echo "        android.library.reference.1=PATH_TO_ANDROID_SDK/sdk/extras/google/google_play_services/libproject/google-play-services_lib" >> ${androidPathConfig}
 echo "        </info>" >> ${androidPathConfig}
-echo "        <hook type=\"before_build\" src=\"scripts/fixProjectProperties.js\" />" >> ${androidPathConfig}
+echo "        <hook type=\"before_compile\" src=\"scripts/fixProjectProperties.js\" />" >> ${androidPathConfig}
 echo "" >> ${androidPathConfig}
 echo "    </platform>" >> ${androidPathConfig}
 
