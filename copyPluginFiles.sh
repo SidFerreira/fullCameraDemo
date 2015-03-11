@@ -39,7 +39,6 @@ cp -a ./../FullCamAndroid/mediaChooserlib/libs/*   ${androidPathMediaChooserlibL
 
 mv ${androidPathMediaChooserlib}/java ${androidPathMediaChooserlib}/src
 
-
 echo "    <platform name=\"android\">" > ${androidPathConfig}
 echo "        <config-file target=\"res/xml/config.xml\" parent=\"/*\">" >> ${androidPathConfig}
 echo "            <feature name=\"FullCamera\">" >> ${androidPathConfig}
@@ -69,8 +68,8 @@ echo "        <framework src=\"src/android/fullcamera\" custom=\"true\" />" >> $
 echo "        <framework src=\"src/android/ecogallery\" custom=\"true\" />" >> ${androidPathConfig}
 echo "        <framework src=\"src/android/mediaChooserlib\" custom=\"true\" />" >> ${androidPathConfig}
 echo "        <info>" >> ${androidPathConfig}
-echo "        You need to install __Google Play Services__ from the `Android Extras` section using the Android SDK manager (run `android`)." >> ${androidPathConfig}
-echo "        You need to add the following line to the `local.properties`:" >> ${androidPathConfig}
+echo "        You need to install __Google Play Services__ from the \`Android Extras\` section using the Android SDK manager (run \`android\`)." >> ${androidPathConfig}
+echo "        You need to add the following line to the \`local.properties\`:" >> ${androidPathConfig}
 echo "        android.library.reference.1=PATH_TO_ANDROID_SDK/sdk/extras/google/google_play_services/libproject/google-play-services_lib" >> ${androidPathConfig}
 echo "        </info>" >> ${androidPathConfig}
 echo "        <hook type=\"before_build\" src=\"scripts/fixProjectProperties.js\" />" >> ${androidPathConfig}
